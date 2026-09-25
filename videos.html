@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Our Videos ❤️</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -83,25 +86,78 @@
       color: #7b5361;
     }
 
+    /* TIMELINE BUTTON */
+
+    .timeline-button-container {
+      text-align: center;
+      margin: 50px 0 20px;
+    }
+
+    .timeline-button {
+      display: inline-block;
+      text-decoration: none;
+      background: #bd3f65;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 17px;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(189, 63, 101, 0.25);
+      transition: 0.3s;
+    }
+
+    .timeline-button:hover {
+      background: #9f3153;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(189, 63, 101, 0.30);
+    }
+
     footer {
       text-align: center;
       padding: 30px;
       margin-top: 40px;
       font-size: 14px;
     }
+
+    @media (max-width: 600px) {
+
+      h1 {
+        font-size: 34px;
+      }
+
+      nav a {
+        margin: 4px 5px;
+        font-size: 14px;
+      }
+
+      .timeline-button {
+        font-size: 16px;
+        padding: 14px 25px;
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
 
   <nav>
+
     <a href="index.html">🏠 Home</a>
+
     <a href="letter.html">💌 Letter</a>
+
     <a href="photos.html">📸 Photos</a>
+
     <a href="videos.html">🎥 Videos</a>
+
     <a href="timeline.html">🗓️ Timeline</a>
+
     <a href="surprise.html">🎁 Surprise</a>
+
   </nav>
+
 
   <div class="container">
 
@@ -111,7 +167,9 @@
       Little moments, silly memories, and everything in between. ❤️
     </p>
 
+
     <!-- VIDEO 1 -->
+
     <div class="video-card">
 
       <video controls>
@@ -128,66 +186,92 @@
       </div>
 
     </div>
-<!-- VIDEO 2 -->
-<div class="video-card">
 
-  <video controls>
-    <source src="7E16D9BE-F196-4EFA-B06C-36B49918D6E7.MP4" type="video/mp4">
-    Your browser does not support video playback.
-  </video>
 
-  <div class="video-title">
-    Another Memory ❤️
+    <!-- VIDEO 2 -->
+
+    <div class="video-card">
+
+      <video controls>
+        <source src="7E16D9BE-F196-4EFA-B06C-36B49918D6E7.MP4" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+
+      <div class="video-title">
+        Another Memory ❤️
+      </div>
+
+      <div class="video-note">
+        Another little moment from our first month together.
+      </div>
+
+    </div>
+
+
+    <!-- VIDEO 3 -->
+
+    <div class="video-card">
+
+      <video controls>
+        <source src="att._OZNhmLz765uV-a0miCTux2ELKkXINl2pFGe0HlkePY.MP4" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+
+      <div class="video-title">
+        A Little Moment Together 💕
+      </div>
+
+      <div class="video-note">
+        One more memory I wanted to keep.
+      </div>
+
+    </div>
+
+
+    <!-- VIDEO 4 -->
+
+    <div class="video-card">
+
+      <video controls>
+        <source src="att.nlmDdJXvqUyAgegbKIsP_ec0xqLYKX2WFimie510uko.MP4" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+
+      <div class="video-title">
+        One More Memory ❤️
+      </div>
+
+      <div class="video-note">
+        A little piece of our story.
+      </div>
+
+    </div>
+
+
+    <!-- TIMELINE BUTTON -->
+
+    <div class="timeline-button-container">
+
+      <a
+        href="timeline.html"
+        class="timeline-button">
+
+        🗓️ Continue Our Story
+
+      </a>
+
+    </div>
+
+
   </div>
 
-  <div class="video-note">
-    Another little moment from our first month together.
-  </div>
-
-</div>
-
-
-<!-- VIDEO 3 -->
-<div class="video-card">
-
-  <video controls>
-    <source src="att._OZNhmLz765uV-a0miCTux2ELKkXINl2pFGe0HlkePY.MP4" type="video/mp4">
-    Your browser does not support video playback.
-  </video>
-
-  <div class="video-title">
-   Thus dhi 💕
-  </div>
-
-  <div class="video-note">
-    One more memory I wanted to keep.
-  </div>
-
-</div>
-
-
-<!-- VIDEO 4 -->
-<div class="video-card">
-
-  <video controls>
-    <source src="att.nlmDdJXvqUyAgegbKIsP_ec0xqLYKX2WFimie510uko.MP4" type="video/mp4">
-    Your browser does not support video playback.
-  </video>
-
-  <div class="video-title">
-    One More Memory ❤️
-  </div>
-
-  <div class="video-note">
-    A little piece of our story.
-  </div>
-
-</div>
-  </div>
 
   <footer>
+
     Made with love by Jamyang for Kuenzang ❤️
+
   </footer>
 
 </body>
+
 </html>
