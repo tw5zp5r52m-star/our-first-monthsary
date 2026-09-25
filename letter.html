@@ -1,8 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>A Letter to You ❤️</title>
@@ -13,114 +16,258 @@
       box-sizing: border-box;
     }
 
+
     body {
       margin: 0;
+
       font-family: Georgia, "Times New Roman", serif;
+
       background: linear-gradient(135deg, #ffe4ec, #fff5f8);
+
       color: #5a3040;
+
       min-height: 100vh;
     }
 
+
+    /* ================================ */
+    /* NAVIGATION */
+    /* ================================ */
+
     nav {
+
       background: rgba(255, 255, 255, 0.92);
+
       padding: 15px;
+
       text-align: center;
+
       position: sticky;
+
       top: 0;
+
       z-index: 10;
+
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
       backdrop-filter: blur(10px);
     }
 
+
     nav a {
+
       text-decoration: none;
+
       color: #b94d70;
+
       margin: 0 10px;
+
       font-weight: bold;
+
       display: inline-block;
+
       padding: 6px;
+
+      transition: 0.3s;
     }
+
 
     nav a:hover {
+
       color: #8e3152;
+
+      transform: translateY(-2px);
     }
 
+
+    /* ================================ */
+    /* MAIN CONTAINER */
+    /* ================================ */
+
     .container {
+
       max-width: 850px;
+
       margin: auto;
+
       padding: 60px 20px;
     }
 
+
     h1 {
+
       text-align: center;
+
       font-size: 45px;
+
       color: #bd3f65;
+
       margin-bottom: 15px;
     }
 
+
     .subtitle {
+
       text-align: center;
+
       font-size: 18px;
+
       margin-bottom: 45px;
+
       color: #7b5361;
     }
 
+
+    /* ================================ */
+    /* LETTER */
+    /* ================================ */
+
     .letter {
+
       background: rgba(255, 255, 255, 0.95);
+
       padding: 45px;
+
       border-radius: 25px;
+
       box-shadow: 0 10px 35px rgba(80, 30, 50, 0.12);
+
       line-height: 1.9;
+
       font-size: 18px;
     }
 
+
     .letter p {
+
       margin-bottom: 22px;
     }
 
+
     .greeting {
+
       font-size: 23px;
+
       font-weight: bold;
+
       color: #bd3f65;
     }
 
+
     .closing {
+
       margin-top: 30px;
     }
 
+
     .signature {
+
       font-weight: bold;
+
       color: #bd3f65;
+
       font-size: 20px;
     }
 
+
     .heart {
+
       text-align: center;
+
       font-size: 30px;
+
       margin-top: 35px;
     }
 
-    footer {
+
+    /* ================================ */
+    /* PHOTO BUTTON */
+    /* ================================ */
+
+    .photo-button-container {
+
       text-align: center;
+
+      margin-top: 40px;
+    }
+
+
+    .photo-button {
+
+      display: inline-block;
+
+      text-decoration: none;
+
+      background: #bd3f65;
+
+      color: white;
+
+      padding: 15px 30px;
+
+      border-radius: 30px;
+
+      font-size: 17px;
+
+      font-weight: bold;
+
+      box-shadow: 0 8px 20px rgba(189, 63, 101, 0.25);
+
+      transition: 0.3s;
+    }
+
+
+    .photo-button:hover {
+
+      background: #9f3153;
+
+      transform: translateY(-3px);
+
+      box-shadow: 0 12px 25px rgba(189, 63, 101, 0.30);
+    }
+
+
+    /* ================================ */
+    /* FOOTER */
+    /* ================================ */
+
+    footer {
+
+      text-align: center;
+
       padding: 35px;
+
       margin-top: 30px;
+
       font-size: 14px;
+
       color: #9d536b;
     }
+
+
+    /* ================================ */
+    /* MOBILE */
+    /* ================================ */
 
     @media (max-width: 600px) {
 
       h1 {
+
         font-size: 34px;
       }
 
+
       .letter {
+
         padding: 28px 22px;
+
         font-size: 17px;
       }
 
+
       nav a {
+
         margin: 4px 5px;
+
         font-size: 14px;
       }
 
@@ -130,121 +277,193 @@
 
 </head>
 
-
 <body>
 
+  <!-- ================================ -->
 
   <!-- NAVIGATION -->
 
+  <!-- ================================ -->
+
   <nav>
 
-    <a href="index.html">🏠 Home</a>
+```
+<a href="index.html">
+  🏠 Home
+</a>
 
-    <a href="letter.html">💌 Letter</a>
+<a href="letter.html">
+  💌 Letter
+</a>
 
-    <a href="photos.html">📸 Photos</a>
+<a href="photos.html">
+  📸 Photos
+</a>
 
-    <a href="videos.html">🎥 Videos</a>
+<a href="videos.html">
+  🎥 Videos
+</a>
 
-    <a href="timeline.html">🗓️ Timeline</a>
+<a href="timeline.html">
+  🗓️ Timeline
+</a>
 
-    <a href="surprise.html">🎁 Surprise</a>
+<a href="surprise.html">
+  🎁 Surprise
+</a>
+```
 
   </nav>
 
+  <!-- ================================ -->
 
   <!-- LETTER -->
 
+  <!-- ================================ -->
+
   <div class="container">
 
-    <h1>A Letter to You 💌</h1>
+```
+<h1>
+  A Letter to You 💌
+</h1>
 
-    <p class="subtitle">
-      For my favorite person, Kuenzang. ❤️
+
+<p class="subtitle">
+
+  For my favorite person, Kuenzang. ❤️
+
+</p>
+
+
+<div class="letter">
+
+
+  <p class="greeting">
+
+    My dearest Kuenzang,
+
+  </p>
+
+
+  <p>
+
+    Happiest first Monthsary, My Thuslebi. ❤️
+    It's crazy how quickly time passes, like we have been
+    together for a month now. One month may not sound like
+    much, but in that period, you have become someone so
+    incredibly special to me.
+
+  </p>
+
+
+  <p>
+
+    I love every little thing about us, our late night talks
+    where I fall asleep of course, our dates, the laughs, and
+    even simple times where we're just there together. Those
+    moments together, I'll always treasure the most.
+
+  </p>
+
+
+  <p>
+
+    Thank you, Kuenzang. Thank you for being you, thank you
+    for always being there, and thank you for letting me be a
+    part of your life and making this first month something
+    I'll always cherish.
+
+  </p>
+
+
+  <p>
+
+    I don't know everything about the future that awaits us,
+    but I do know that I'm happy that I get to live with you
+    and make memories that we will one day look back on with
+    big smiles.
+
+  </p>
+
+
+  <p>
+
+    So, to our first month and to many more. A month together
+    with you, and I can't wait for more moments, more of our
+    talks, more trauma bonding lol, and more fun that's waiting
+    for us.
+
+  </p>
+
+
+  <p>
+
+    Happy Monthsary, my love. ❤️
+
+  </p>
+
+
+  <div class="closing">
+
+    <p>
+
+      With yours truly and always yours,
+
     </p>
 
 
-    <div class="letter">
+    <p class="signature">
 
-      <p class="greeting">
-        My dearest Kuenzang,
-      </p>
+      Jamyang (LONG KATANG) ❤️
 
-
-      <p>
-        Happiest first Monthsary, My Thuslebi. ❤️
-        It's crazy how quickly time passes, like we have been
-        together for a month now. One month may not sound like
-        much, but in that period, you have become someone so
-        incredibly special to me.
-      </p>
-
-
-      <p>
-        I love every little thing about us, our late night talks
-        where I fall asleep of course, our dates, the laughs, and
-        even simple times where we're just there together. Those
-        moments together, I'll always treasure the most.
-      </p>
-
-
-      <p>
-        Thank you, Kuenzang. Thank you for being you, thank you
-        for always being there, and thank you for letting me be a
-        part of your life and making this first month something
-        I'll always cherish.
-      </p>
-
-
-      <p>
-        I don't know everything about the future that awaits us,
-        but I do know that I'm happy that I get to live with you
-        and make memories that we will one day look back on with
-        big smiles.
-      </p>
-
-
-      <p>
-        So, to our first month and to many more. A month together
-        with you, and I can't wait for more moments, more of our
-        talks, more trauma bonding lol, and more fun that's waiting
-        for us.
-      </p>
-
-
-      <p>
-        Happy Monthsary, my love. ❤️
-      </p>
-
-
-      <div class="closing">
-
-        <p>
-          With yours truly and always yours,
-        </p>
-
-        <p class="signature">
-          Jamyang (LONG KATANG) ❤️
-        </p>
-
-      </div>
-
-
-      <div class="heart">
-        ❤️
-      </div>
-
-    </div>
+    </p>
 
   </div>
 
 
+  <div class="heart">
+
+    ❤️
+
+  </div>
+
+
+</div>
+
+
+<!-- ================================ -->
+<!-- PHOTO BUTTON -->
+<!-- ================================ -->
+
+<div class="photo-button-container">
+
+  <a
+    href="photos.html"
+    class="photo-button">
+
+    📸 See Our Memories
+
+  </a>
+
+</div>
+```
+
+  </div>
+
+  <!-- ================================ -->
+
+  <!-- FOOTER -->
+
+  <!-- ================================ -->
+
   <footer>
 
-    Made with love by Jamyang for Kuenzang ❤️
+```
+Made with love by Jamyang for Kuenzang ❤️
+```
 
   </footer>
-
 
 </body>
 
