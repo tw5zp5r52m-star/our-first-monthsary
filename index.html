@@ -26,9 +26,87 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 }
+/* Navigation */
 
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 14px 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 3px 15px rgba(80, 30, 50, 0.12);
+
+    z-index: 1000;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #bd3f65;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    padding: 8px 12px;
+    border-radius: 20px;
+
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    background: #ffe0ea;
+    transform: translateY(-2px);
+}
 /* Floating hearts */
+/* Navigation */
 
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 14px 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 3px 15px rgba(80, 30, 50, 0.12);
+
+    z-index: 1000;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #bd3f65;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    padding: 8px 12px;
+    border-radius: 20px;
+
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    background: #ffe0ea;
+    transform: translateY(-2px);
+}
 .heart {
     position: fixed;
     bottom: -30px;
@@ -420,7 +498,18 @@ footer {
 
 
 <body>
+<nav class="main-nav">
 
+    <a href="index.html">🏠 Home</a>
+    <a href="letter.html">💌 Letter</a>
+    <a href="photos.html">📸 Photos</a>
+    <a href="videos.html">🎥 Videos</a>
+    <a href="timeline.html">🗓️ Timeline</a>
+    <a href="surprise.html">🎁 Surprise</a>
+
+<!-- Navigation -->
+
+</nav>
 
 <!-- Floating hearts -->
 
