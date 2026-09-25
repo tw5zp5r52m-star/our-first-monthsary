@@ -1,230 +1,616 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Timeline ❤️</title>
+
+  <title>Our Story ❤️</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ffe4ec, #fff5f8);
-      color: #5a3040;
+      font-family: Georgia, "Times New Roman", serif;
+      background: linear-gradient(135deg, #fff0f5, #ffe0ea, #fff7fa);
+      color: #542536;
       min-height: 100vh;
     }
 
+    /* Navigation */
+
     nav {
-      background: rgba(255, 255, 255, 0.9);
-      padding: 15px;
+      background: rgba(255, 255, 255, 0.94);
+      padding: 14px 10px;
       text-align: center;
       position: sticky;
       top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(80, 30, 50, 0.12);
+      backdrop-filter: blur(10px);
     }
 
     nav a {
       text-decoration: none;
-      color: #b94d70;
-      margin: 0 10px;
+      color: #bd3f65;
+      margin: 0 7px;
+      font-size: 14px;
       font-weight: bold;
+      display: inline-block;
+      padding: 8px 10px;
+      border-radius: 20px;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      color: #8e3152;
+      background: #ffe0ea;
+      transform: translateY(-2px);
     }
 
+
+    /* Main */
+
     .container {
-      max-width: 850px;
+      width: 90%;
+      max-width: 950px;
       margin: auto;
-      padding: 50px 20px;
+      padding: 70px 0;
+    }
+
+
+    /* Heading */
+
+    .heading {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .heading .heart {
+      font-size: 60px;
+      animation: beat 1.5s infinite;
+    }
+
+    @keyframes beat {
+
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.12);
+      }
+
     }
 
     h1 {
-      text-align: center;
-      font-size: 42px;
-      margin-bottom: 10px;
+      font-size: clamp(42px, 8vw, 70px);
+      color: #bd3f65;
+      margin: 15px 0;
     }
 
-    .subtitle {
-      text-align: center;
+    .heading p {
       font-size: 18px;
-      margin-bottom: 50px;
+      line-height: 1.7;
+      max-width: 650px;
+      margin: auto;
     }
+
+
+    /* Timeline */
 
     .timeline {
       position: relative;
-      margin: 0 auto;
+      margin: auto;
     }
+
+    /* Centre line */
 
     .timeline::before {
       content: "";
       position: absolute;
       left: 50%;
-      transform: translateX(-50%);
+      top: 0;
+      bottom: 0;
       width: 3px;
-      height: 100%;
-      background: #e7a1b6;
+      background: #e89ab1;
+      transform: translateX(-50%);
     }
 
-    .event {
-      width: 50%;
-      padding: 15px 35px;
+
+    /* Timeline item */
+
+    .timeline-item {
       position: relative;
+      width: 50%;
+      padding: 20px 45px;
+      margin-bottom: 35px;
     }
 
-    .event:nth-child(odd) {
+    .timeline-item:nth-child(odd) {
       left: 0;
       text-align: right;
     }
 
-    .event:nth-child(even) {
+    .timeline-item:nth-child(even) {
       left: 50%;
+      text-align: left;
     }
 
-    .event::after {
-      content: "❤️";
+
+    /* Heart on timeline */
+
+    .timeline-dot {
       position: absolute;
-      top: 18px;
-      width: 34px;
-      height: 34px;
+      top: 25px;
+      width: 42px;
+      height: 42px;
       background: white;
+      border: 3px solid #bd3f65;
       border-radius: 50%;
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-size: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      align-items: center;
+      font-size: 19px;
+      z-index: 2;
+      box-shadow: 0 4px 12px rgba(100, 30, 55, 0.15);
     }
 
-    .event:nth-child(odd)::after {
-      right: -17px;
+    .timeline-item:nth-child(odd) .timeline-dot {
+      right: -21px;
     }
 
-    .event:nth-child(even)::after {
-      left: -17px;
+    .timeline-item:nth-child(even) .timeline-dot {
+      left: -21px;
     }
+
+
+    /* Cards */
 
     .card {
-      background: white;
-      padding: 20px;
-      border-radius: 18px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+      background: rgba(255, 255, 255, 0.88);
+      padding: 25px;
+      border-radius: 22px;
+      box-shadow: 0 10px 30px rgba(100, 30, 55, 0.10);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(100, 30, 55, 0.16);
     }
 
     .date {
-      color: #b94d70;
+      color: #bd3f65;
+      font-size: 15px;
       font-weight: bold;
+      letter-spacing: 1px;
       margin-bottom: 8px;
     }
 
     .card h2 {
-      margin: 5px 0 10px;
-      font-size: 21px;
+      color: #8f3151;
+      font-size: 24px;
+      margin: 5px 0 12px;
     }
 
     .card p {
-      line-height: 1.6;
+      font-size: 16px;
+      line-height: 1.7;
       margin: 0;
     }
 
+
+    /* Final message */
+
+    .ending {
+      text-align: center;
+      margin-top: 80px;
+      padding: 45px 25px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(100, 30, 55, 0.10);
+    }
+
+    .ending h2 {
+      color: #bd3f65;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .ending p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .ending .big-heart {
+      font-size: 45px;
+      margin-top: 15px;
+    }
+
+
+    /* Footer */
+
     footer {
       text-align: center;
-      padding: 30px;
-      margin-top: 40px;
+      padding: 35px;
+      color: #9d536b;
       font-size: 14px;
     }
 
+
+    /* Mobile */
+
     @media (max-width: 700px) {
+
+      .container {
+        width: 92%;
+      }
 
       .timeline::before {
         left: 20px;
       }
 
-      .event,
-      .event:nth-child(even) {
+      .timeline-item,
+      .timeline-item:nth-child(even),
+      .timeline-item:nth-child(odd) {
         width: 100%;
         left: 0;
         text-align: left;
-        padding-left: 55px;
-        padding-right: 10px;
+        padding-left: 60px;
+        padding-right: 0;
       }
 
-      .event:nth-child(odd)::after,
-      .event:nth-child(even)::after {
-        left: 3px;
+      .timeline-item:nth-child(odd) .timeline-dot,
+      .timeline-item:nth-child(even) .timeline-dot {
+        left: -1px;
         right: auto;
       }
 
+      .card h2 {
+        font-size: 21px;
+      }
+
+      .card p {
+        font-size: 15px;
+      }
+
+      nav a {
+        font-size: 12px;
+        margin: 2px;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="letter.html">💌 Letter</a>
-    <a href="photos.html">📸 Photos</a>
-    <a href="videos.html">🎥 Videos</a>
-    <a href="timeline.html">🗓️ Timeline</a>
-    <a href="surprise.html">🎁 Surprise</a>
-  </nav>
 
-  <div class="container">
+<!-- Navigation -->
 
-    <h1>Our Timeline 🗓️</h1>
+<nav>
 
-    <p class="subtitle">
-      A few moments that made our first month special. ❤️
+  <a href="index.html">🏠 Home</a>
+  <a href="letter.html">💌 Letter</a>
+  <a href="photos.html">📸 Photos</a>
+  <a href="videos.html">🎥 Videos</a>
+  <a href="timeline.html">🗓️ Timeline</a>
+  <a href="surprise.html">🎁 Surprise</a>
+
+</nav>
+
+
+<div class="container">
+
+
+  <!-- Heading -->
+
+  <div class="heading">
+
+    <div class="heart">
+      ❤️
+    </div>
+
+    <h1>
+      Our Story So Far
+    </h1>
+
+    <p>
+      From talking in class to making memories together,
+      here are some of the little moments that made our
+      first month special, Kuenzang. ❤️
     </p>
 
-    <div class="timeline">
+  </div>
 
-      <div class="event">
-        <div class="card">
-          <div class="date">The Beginning</div>
-          <h2>When Our Story Started ❤️</h2>
-          <p>
-            This was the beginning of something really special between us.
-          </p>
-        </div>
+
+  <!-- Timeline -->
+
+  <div class="timeline">
+
+
+    <!-- 27 AUGUST -->
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot">
+        ❤️
       </div>
 
-      <div class="event">
-        <div class="card">
-          <div class="date">Our First Month</div>
-          <h2>So Many Little Memories</h2>
-          <p>
-            From our talks and dates to all the random moments, every little
-            memory became part of our story.
-          </p>
-        </div>
-      </div>
+      <div class="card">
 
-      <div class="event">
-        <div class="card">
-          <div class="date">27 September 2026</div>
-          <h2>Our First Monthsary 🎉</h2>
-          <p>
-            One month together, and a whole lot of memories already made.
-            Here's to the moments still waiting for us.
-          </p>
+        <div class="date">
+          27 AUGUST
         </div>
+
+        <h2>
+          It Became Official ❤️
+        </h2>
+
+        <p>
+          While talking in class, somehow we went from
+          just talking to officially becoming us.
+          And that was the beginning of everything.
+        </p>
+
       </div>
 
     </div>
 
+
+    <!-- 29 AUGUST FIRST DATE -->
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot">
+        🌳
+      </div>
+
+      <div class="card">
+
+        <div class="date">
+          29 AUGUST
+        </div>
+
+        <h2>
+          Our First Date
+        </h2>
+
+        <p>
+          We went on our first date to Ludrong Park.
+          We talked, spent time together, and somehow
+          ended up holding hands for basically the entire
+          time. Lmao. ❤️
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- 29 AUGUST DRINK -->
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot">
+        🥂
+      </div>
+
+      <div class="card">
+
+        <div class="date">
+          29 AUGUST
+        </div>
+
+        <h2>
+          Our First Drink
+        </h2>
+
+        <p>
+          Later that day, we drank together for the first
+          time at Samten's house. Another little memory
+          that became part of our story.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- 12 SEPTEMBER -->
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot">
+        🥾
+      </div>
+
+      <div class="card">
+
+        <div class="date">
+          12 SEPTEMBER
+        </div>
+
+        <h2>
+          Wangditse Hike
+        </h2>
+
+        <p>
+          We went on a hike to Wangditse and had lunch
+          together afterward, with our not-so-picky eater
+          Loday Thai. 😂❤️
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- 16 SEPTEMBER -->
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot">
+        💌
+      </div>
+
+      <div class="card">
+
+        <div class="date">
+          16 SEPTEMBER
+        </div>
+
+        <h2>
+          The Letter Incident
+        </h2>
+
+        <p>
+          My mother found my letter and your notes.
+          Definitely not the way we planned for those
+          things to be discovered. 😭
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- 17 SEPTEMBER -->
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot">
+        🌳
+      </div>
+
+      <div class="card">
+
+        <div class="date">
+          17 SEPTEMBER
+        </div>
+
+        <h2>
+          Somehow, We Still Met
+        </h2>
+
+        <p>
+          Even after everything the day before, we somehow
+          still managed to meet and went to Eco Park
+          together. ❤️
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- 21 SEPTEMBER -->
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot">
+        🍃
+      </div>
+
+      <div class="card">
+
+        <div class="date">
+          21 SEPTEMBER
+        </div>
+
+        <h2>
+          Back to Eco Park
+        </h2>
+
+        <p>
+          After Chemistry extra class, we went to Eco Park
+          again. Apparently, Eco Park was becoming
+          our place. 😂❤️
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- 27 SEPTEMBER -->
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot">
+        🎉
+      </div>
+
+      <div class="card">
+
+        <div class="date">
+          27 SEPTEMBER
+        </div>
+
+        <h2>
+          Our First Monthsary ❤️
+        </h2>
+
+        <p>
+          One month since we officially became us.
+          And hopefully, just the beginning of many more
+          memories together.
+        </p>
+
+      </div>
+
+    </div>
+
+
   </div>
 
-  <footer>
-    Made with love by Jamyang for Kuenzang ❤️
-  </footer>
+
+  <!-- Ending -->
+
+  <div class="ending">
+
+    <h2>
+      This Is Only The Beginning... ❤️
+    </h2>
+
+    <p>
+      One month down, so many memories already,
+      and hopefully many more moments waiting for us.
+    </p>
+
+    <p>
+      To be continued...
+    </p>
+
+    <div class="big-heart">
+      ❤️
+    </div>
+
+  </div>
+
+
+</div>
+
+
+<footer>
+
+  Made with love by Jamyang for Kuenzang ❤️
+
+</footer>
+
 
 </body>
+
 </html>
