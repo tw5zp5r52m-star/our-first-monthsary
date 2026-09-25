@@ -3,23 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Our Photos ❤️</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Georgia, "Times New Roman", serif;
       background: linear-gradient(135deg, #ffe4ec, #fff5f8);
       color: #5a3040;
       min-height: 100vh;
     }
 
     nav {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       padding: 15px;
       text-align: center;
       position: sticky;
@@ -33,6 +35,8 @@
       color: #b94d70;
       margin: 0 10px;
       font-weight: bold;
+      display: inline-block;
+      padding: 6px;
     }
 
     nav a:hover {
@@ -40,71 +44,96 @@
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
-      padding: 50px 20px;
+      padding: 55px 20px;
       text-align: center;
     }
 
     h1 {
-      font-size: 42px;
+      font-size: 45px;
       margin-bottom: 10px;
+      color: #bd3f65;
     }
 
     .subtitle {
       font-size: 18px;
-      margin-bottom: 40px;
+      margin-bottom: 45px;
+      line-height: 1.6;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
     }
 
     .photo-card {
       background: white;
-      padding: 10px;
-      border-radius: 18px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      padding: 12px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(80,30,50,0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .photo-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(80,30,50,0.18);
     }
 
     .photo-card img {
       width: 100%;
-      height: 280px;
+      height: 320px;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 14px;
+      display: block;
     }
 
-    .empty {
-      margin-top: 40px;
-      font-size: 17px;
+    .caption {
+      padding: 14px 5px 5px;
+      font-size: 16px;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 35px;
       margin-top: 40px;
       font-size: 14px;
+      color: #9d536b;
     }
+
+    @media (max-width: 600px) {
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card img {
+        height: 380px;
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
 
   <nav>
+
     <a href="index.html">🏠 Home</a>
     <a href="letter.html">💌 Letter</a>
     <a href="photos.html">📸 Photos</a>
     <a href="videos.html">🎥 Videos</a>
     <a href="timeline.html">🗓️ Timeline</a>
     <a href="surprise.html">🎁 Surprise</a>
+
   </nav>
+
 
   <div class="container">
 
@@ -114,27 +143,94 @@
       Every picture holds a little piece of our story, Kuenzang. ❤️
     </p>
 
+
     <div class="gallery">
 
-      <!--
-      ADD YOUR PHOTOS HERE.
 
-      Example:
+      <!-- PHOTO 1 -->
+
       <div class="photo-card">
-        <img src="photos/photo1.jpg" alt="Our memory">
-      </div>
-      -->
 
-      <div class="empty">
-        Our memories will appear here soon. ❤️
+        <img
+          src="IMG_1780.jpg"
+          alt="Our memory">
+
+        <div class="caption">
+          A memory I'll always keep ❤️
+        </div>
+
       </div>
+
+
+      <!-- PHOTO 2 -->
+
+      <div class="photo-card">
+
+        <img
+          src="IMG_1787.PNG"
+          alt="Our memory">
+
+        <div class="caption">
+          One of our little moments 💕
+        </div>
+
+      </div>
+
+
+      <!-- PHOTO 3 -->
+
+      <div class="photo-card">
+
+        <img
+          src="IMG_1974.JPG"
+          alt="Our memory">
+
+        <div class="caption">
+          Another moment together ❤️
+        </div>
+
+      </div>
+
+
+      <!-- PHOTO 4 -->
+
+      <div class="photo-card">
+
+        <img
+          src="IMG_2098.PNG"
+          alt="Our memory">
+
+        <div class="caption">
+          A moment worth remembering 💗
+        </div>
+
+      </div>
+
+
+      <!-- PHOTO 5 -->
+
+      <div class="photo-card">
+
+        <img
+          src="IMG_2455.JPG"
+          alt="Our memory">
+
+        <div class="caption">
+          A little piece of our story ❤️
+        </div>
+
+      </div>
+
 
     </div>
 
   </div>
 
+
   <footer>
+
     Made with love by Jamyang for Kuenzang ❤️
+
   </footer>
 
 </body>
