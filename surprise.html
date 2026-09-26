@@ -29,7 +29,7 @@
 
 
     /* =====================================
-       MAIN PAGE
+       MAIN SURPRISE PAGE
        ===================================== */
 
     .container {
@@ -61,7 +61,7 @@
 
 
     /* =====================================
-       BUTTONS
+       BUTTON
        ===================================== */
 
     button {
@@ -78,21 +78,18 @@
 
       cursor: pointer;
 
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      box-shadow:
+        0 8px 20px rgba(0,0,0,0.15);
 
       transition:
         transform 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease;
+        background 0.3s ease;
     }
 
 
     button:hover {
       background: #b94469;
-
       transform: translateY(-3px);
-
-      box-shadow: 0 12px 25px rgba(0,0,0,0.18);
     }
 
 
@@ -108,7 +105,7 @@
 
       margin-top: 35px;
 
-      background: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.96);
 
       padding: 35px;
 
@@ -121,11 +118,13 @@
 
       font-size: 18px;
 
-      animation: messageAppear 1s ease;
+      animation:
+        messageAppear 1s ease;
     }
 
 
     #message h2 {
+
       color: #bd3f65;
 
       margin-bottom: 20px;
@@ -135,6 +134,7 @@
 
 
     #message p {
+
       margin-bottom: 18px;
     }
 
@@ -155,18 +155,19 @@
 
 
     /* =====================================
-       TURN THE PAGE BUTTON
+       TURN PAGE BUTTON
        ===================================== */
 
     .finish-button {
+
+      display: none;
 
       margin-top: 25px;
 
       background: #7f4058;
 
-      display: none;
-
-      animation: fadeUp 1s ease;
+      animation:
+        fadeUp 1s ease;
     }
 
 
@@ -207,7 +208,7 @@
 
 
     /* =====================================
-       FINAL BOOK SCREEN
+       BOOK ENDING SCREEN
        ===================================== */
 
     #bookEnding {
@@ -220,7 +221,7 @@
         radial-gradient(
           circle at center,
           #fff8fa 0%,
-          #ffe4ed 48%,
+          #ffe5ed 50%,
           #efb8ca 100%
         );
 
@@ -278,7 +279,7 @@
 
       align-items: center;
 
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
 
@@ -293,18 +294,15 @@
       transform-style: preserve-3d;
 
       transform:
-        rotateX(4deg);
-
-      transition:
-        transform 1.2s ease;
+        rotateX(5deg);
     }
 
 
     /* =====================================
-       BOOK PAGES
+       OPEN BOOK PAGES
        ===================================== */
 
-    .book-pages {
+    .pages {
 
       position: absolute;
 
@@ -316,18 +314,19 @@
 
       height: 235px;
 
-      background: #fffdfd;
-
-      border: 2px solid #e3c1cc;
-
-      box-shadow:
-        0 10px 25px rgba(70,30,45,0.18);
-
       display: flex;
 
-      overflow: hidden;
+      background: #fffdfd;
 
-      transform-style: preserve-3d;
+      border: 2px solid #e5c5ce;
+
+      box-shadow:
+        0 10px 25px rgba(70,30,45,0.16);
+
+      z-index: 5;
+
+      transition:
+        opacity 0.7s ease;
     }
 
 
@@ -344,7 +343,7 @@
           #fff7fa
         );
 
-      border: 1px solid #ead0d8;
+      border: 1px solid #ead1d8;
 
       display: flex;
 
@@ -354,39 +353,33 @@
 
       align-items: center;
 
-      position: relative;
+      transform-style: preserve-3d;
 
       backface-visibility: hidden;
 
       transition:
-        transform 2.4s
+        transform 2.1s
         cubic-bezier(0.65, 0, 0.35, 1);
-
-      transform-style: preserve-3d;
-
-      z-index: 5;
     }
 
 
-    .page.left-page {
+    .page.left {
 
-      transform-origin: right center;
-
-      border-radius: 8px 2px 2px 8px;
+      transform-origin:
+        right center;
     }
 
 
-    .page.right-page {
+    .page.right {
 
-      transform-origin: left center;
-
-      border-radius: 2px 8px 8px 2px;
+      transform-origin:
+        left center;
     }
 
 
     .page-icon {
 
-      font-size: 50px;
+      font-size: 48px;
 
       margin-bottom: 12px;
     }
@@ -396,45 +389,27 @@
 
       font-size: 18px;
 
-      color: #8f4a61;
-
       font-weight: bold;
+
+      color: #8f4a61;
     }
 
 
     .page-small {
 
+      margin-top: 6px;
+
       font-size: 13px;
 
       color: #a56b7d;
-
-      margin-top: 6px;
     }
 
 
     /* =====================================
-       PAGE TURN ANIMATION
+       OPEN BOOK COVERS
        ===================================== */
 
-    #bookEnding.closing .left-page {
-
-      transform:
-        rotateY(-165deg);
-    }
-
-
-    #bookEnding.closing .right-page {
-
-      transform:
-        rotateY(165deg);
-    }
-
-
-    /* =====================================
-       BOOK COVERS
-       ===================================== */
-
-    .cover {
+    .open-cover {
 
       position: absolute;
 
@@ -447,42 +422,44 @@
       background:
         linear-gradient(
           135deg,
-          #8e3c58,
-          #bd5b7b,
-          #8b3955
+          #8f3d59,
+          #bd5c7d,
+          #84364f
         );
 
       border: 4px solid #713047;
 
       box-shadow:
-        0 18px 40px rgba(70,30,45,0.3);
-
-      transform-style: preserve-3d;
+        0 15px 35px rgba(70,30,45,0.25);
 
       z-index: 10;
 
+      transform-style: preserve-3d;
+
       transition:
-        transform 2.8s
+        transform 2.6s
         cubic-bezier(0.65, 0, 0.35, 1);
     }
 
 
-    .cover.left {
+    .open-cover.left {
 
       left: 0;
 
-      transform-origin: right center;
+      transform-origin:
+        right center;
 
       border-radius:
         12px 3px 3px 12px;
     }
 
 
-    .cover.right {
+    .open-cover.right {
 
       right: 0;
 
-      transform-origin: left center;
+      transform-origin:
+        left center;
 
       border-radius:
         3px 12px 12px 3px;
@@ -493,7 +470,7 @@
        COVER DECORATION
        ===================================== */
 
-    .cover::before {
+    .open-cover::before {
 
       content: "";
 
@@ -501,129 +478,227 @@
 
       inset: 12px;
 
-      border: 1px solid rgba(255,255,255,0.35);
+      border:
+        1px solid
+        rgba(255,255,255,0.3);
 
       border-radius: 8px;
     }
 
 
-    .cover::after {
+    /* =====================================
+       BOOK CLOSING
+       ===================================== */
 
-      content: "❤️";
-
-      position: absolute;
-
-      left: 50%;
-
-      top: 50%;
+    #bookEnding.closing
+    .page.left {
 
       transform:
-        translate(-50%, -50%);
-
-      font-size: 28px;
-
-      opacity: 0.65;
+        rotateY(-178deg);
     }
 
 
-    /* =====================================
-       CLOSING COVERS
-       ===================================== */
+    #bookEnding.closing
+    .page.right {
 
-    #bookEnding.closing .cover.left {
+      transform:
+        rotateY(178deg);
+    }
+
+
+    #bookEnding.closing
+    .open-cover.left {
 
       transform:
         rotateY(-178deg);
 
       transition-delay:
-        1.1s;
+        0.8s;
     }
 
 
-    #bookEnding.closing .cover.right {
+    #bookEnding.closing
+    .open-cover.right {
 
       transform:
         rotateY(178deg);
 
       transition-delay:
-        1.1s;
+        0.8s;
     }
 
 
     /* =====================================
-       BOOK TITLE
+       CLOSED BOOK
        ===================================== */
 
-    .book-title {
+    .closed-book {
 
       position: absolute;
+
+      width: 360px;
+
+      height: 245px;
 
       left: 50%;
 
       top: 50%;
 
-      width: 270px;
-
       transform:
         translate(-50%, -50%)
-        translateZ(35px);
+        scale(0.94);
 
-      text-align: center;
+      background:
+        linear-gradient(
+          135deg,
+          #8d3a56,
+          #bd5b7b,
+          #85364f
+        );
 
-      color: #fff8fa;
+      border:
+        5px solid #6d2d45;
 
-      z-index: 30;
+      border-radius: 12px;
+
+      box-shadow:
+        0 25px 55px
+        rgba(70,30,45,0.35);
 
       opacity: 0;
 
+      visibility: hidden;
+
+      z-index: 50;
+
       transition:
-        opacity 1.5s ease;
-
-      pointer-events: none;
+        opacity 1.2s ease,
+        transform 1.2s ease;
     }
 
 
-    .book-title .small-title {
+    /* Outer decorative border */
 
-      font-size: 14px;
+    .closed-book::before {
 
-      letter-spacing: 4px;
+      content: "";
 
-      margin-bottom: 10px;
+      position: absolute;
 
-      opacity: 0.9;
+      inset: 15px;
+
+      border:
+        2px solid
+        rgba(255,255,255,0.35);
+
+      border-radius: 8px;
     }
 
 
-    .book-title .main-title {
+    .closed-book::after {
 
-      font-size: 31px;
+      content: "❤️";
 
-      font-weight: bold;
+      position: absolute;
 
-      letter-spacing: 2px;
+      bottom: 18px;
 
-      text-transform: uppercase;
+      left: 50%;
+
+      transform:
+        translateX(-50%);
+
+      font-size: 25px;
+
+      opacity: 0.85;
+    }
+
+
+    /* =====================================
+       TITLE ON CLOSED BOOK
+       ===================================== */
+
+    .closed-book-title {
+
+      position: absolute;
+
+      top: 50%;
+
+      left: 50%;
+
+      transform:
+        translate(-50%, -50%);
+
+      width: 300px;
+
+      text-align: center;
+
+      color: #fff9fb;
 
       text-shadow:
         0 3px 8px rgba(50,20,30,0.35);
     }
 
 
-    .book-title .heart-title {
+    .closed-book-title .small {
 
-      font-size: 25px;
+      font-size: 13px;
 
-      margin-top: 10px;
+      letter-spacing: 5px;
+
+      margin-bottom: 12px;
     }
 
 
-    #bookEnding.closed .book-title {
+    .closed-book-title .main {
+
+      font-size: 37px;
+
+      font-weight: bold;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+    }
+
+
+    .closed-book-title .date {
+
+      margin-top: 12px;
+
+      font-size: 13px;
+
+      letter-spacing: 2px;
+
+      opacity: 0.9;
+    }
+
+
+    /* =====================================
+       SHOW CLOSED BOOK
+       ===================================== */
+
+    #bookEnding.closed
+    .pages,
+    #bookEnding.closed
+    .open-cover {
+
+      opacity: 0;
+
+      visibility: hidden;
+    }
+
+
+    #bookEnding.closed
+    .closed-book {
 
       opacity: 1;
 
-      transition-delay:
-        0.3s;
+      visibility: visible;
+
+      transform:
+        translate(-50%, -50%)
+        scale(1);
     }
 
 
@@ -649,7 +724,8 @@
     }
 
 
-    #bookEnding.closed .final-message {
+    #bookEnding.closed
+    .final-message {
 
       opacity: 1;
 
@@ -680,9 +756,9 @@
 
     .beginning-button {
 
-      background: #bd3f65;
-
       display: none;
+
+      background: #bd3f65;
     }
 
 
@@ -743,6 +819,7 @@
     @keyframes floatHeart {
 
       0% {
+
         transform:
           translateY(0)
           rotate(0deg);
@@ -755,6 +832,7 @@
       }
 
       100% {
+
         transform:
           translateY(-110vh)
           rotate(30deg);
@@ -794,13 +872,13 @@
       .book-scene {
 
         transform:
-          scale(0.72);
+          scale(0.68);
 
         margin-top:
-          -25px;
+          -30px;
 
         margin-bottom:
-          -30px;
+          -40px;
       }
 
 
@@ -839,31 +917,25 @@
 
 
 <!-- =====================================
-     MAIN SURPRISE
+     SURPRISE
      ===================================== -->
 
 <div class="container" id="mainContent">
-
 
   <h1>
     One More Thing... 🎁
   </h1>
 
-
   <p class="subtitle">
     Kuenzang, there's something I wanted you to see. ❤️
   </p>
 
-
   <button onclick="showMessage()">
-
     Open Your Surprise 💌
-
   </button>
 
 
   <div id="message">
-
 
     <h2>
       Happy First Monthsary, Thuslebi ❤️
@@ -906,8 +978,6 @@
     </p>
 
 
-    <!-- FINAL BUTTON -->
-
     <button
       class="finish-button"
       id="finishButton"
@@ -917,9 +987,7 @@
 
     </button>
 
-
   </div>
-
 
 </div>
 
@@ -932,7 +1000,7 @@
 
 
 <!-- =====================================
-     BOOK CLOSING SCREEN
+     BOOK ENDING
      ===================================== -->
 
 <div id="bookEnding">
@@ -944,12 +1012,11 @@
     <div class="book">
 
 
-      <!-- PAGES -->
+      <!-- OPEN PAGES -->
 
-      <div class="book-pages">
+      <div class="pages">
 
-
-        <div class="page left-page">
+        <div class="page left">
 
           <div class="page-icon">
             💌
@@ -966,7 +1033,7 @@
         </div>
 
 
-        <div class="page right-page">
+        <div class="page right">
 
           <div class="page-icon">
             📸
@@ -982,31 +1049,34 @@
 
         </div>
 
-
       </div>
 
 
-      <!-- BOOK COVERS -->
+      <!-- OPEN BOOK COVERS -->
 
-      <div class="cover left"></div>
+      <div class="open-cover left"></div>
 
-      <div class="cover right"></div>
+      <div class="open-cover right"></div>
 
 
-      <!-- TITLE ON CLOSED BOOK -->
+      <!-- CLOSED BOOK -->
 
-      <div class="book-title">
+      <div class="closed-book">
 
-        <div class="small-title">
-          OUR
-        </div>
+        <div class="closed-book-title">
 
-        <div class="main-title">
-          Journey
-        </div>
+          <div class="small">
+            OUR
+          </div>
 
-        <div class="heart-title">
-          ❤️
+          <div class="main">
+            JOURNEY
+          </div>
+
+          <div class="date">
+            27 AUGUST — 27 SEPTEMBER 2026
+          </div>
+
         </div>
 
       </div>
@@ -1014,16 +1084,12 @@
 
     </div>
 
-
   </div>
 
 
-  <!-- =====================================
-       FINAL MESSAGE
-       ===================================== -->
+  <!-- FINAL MESSAGE -->
 
   <div class="final-message">
-
 
     <h2>
       Until the Next Chapter ❤️
@@ -1043,7 +1109,6 @@
       🏠 Back to the Beginning
 
     </button>
-
 
   </div>
 
@@ -1080,7 +1145,7 @@ function showMessage() {
     finishButton.style.display =
       "inline-block";
 
-  }, 900);
+  }, 800);
 
 
   setTimeout(function() {
@@ -1099,7 +1164,7 @@ function showMessage() {
 
 
 /* =====================================
-   START BOOK CLOSING
+   CLOSE THE BOOK
    ===================================== */
 
 function startClosingBook() {
@@ -1114,7 +1179,7 @@ function startClosingBook() {
     document.getElementById("footer");
 
 
-  /* Fade the surprise page away */
+  /* Fade away the surprise */
 
   mainContent.style.transition =
     "opacity 1s ease, transform 1s ease";
@@ -1133,16 +1198,13 @@ function startClosingBook() {
     "0";
 
 
-  /* Bring in the book */
-
   setTimeout(function() {
 
     bookEnding.classList.add("active");
 
 
     /*
-      Give her a moment to see
-      the open book before it closes.
+      Show the open book first.
     */
 
     setTimeout(function() {
@@ -1153,16 +1215,16 @@ function startClosingBook() {
 
 
     /*
-      The book has now finished
-      closing.
+      After the covers have completely
+      closed, replace the open book with
+      the single closed book.
     */
 
     setTimeout(function() {
 
       bookEnding.classList.add("closed");
 
-    }, 3900);
-
+    }, 4000);
 
   }, 900);
 
@@ -1170,7 +1232,7 @@ function startClosingBook() {
 
 
 /* =====================================
-   RETURN TO BEGINNING
+   BACK TO BEGINNING
    ===================================== */
 
 function goToBeginning() {
@@ -1179,7 +1241,6 @@ function goToBeginning() {
     "index.html";
 
 }
-
 
 </script>
 
