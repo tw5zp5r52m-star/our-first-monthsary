@@ -320,6 +320,15 @@ section {
     animation: appear 1s ease;
 }
 
+
+/* READ LETTER BUTTON */
+
+.read-letter {
+    display: none;
+    animation: appear 1s ease;
+}
+
+
 @keyframes appear {
 
     from {
@@ -524,6 +533,8 @@ footer {
     </button>
 
 
+    <!-- HIDDEN MESSAGE -->
+
     <div
         class="secret"
         id="secret">
@@ -547,15 +558,17 @@ footer {
     </div>
 
 
-    <!-- READ LETTER BUTTON NOW AT THE BOTTOM -->
+    <!-- THIS APPEARS ONLY AFTER THE MESSAGE IS OPENED -->
 
     <a
         href="letter.html"
-        class="button">
+        class="button read-letter"
+        id="readLetter">
 
         Read My Letter 💌
 
     </a>
+
 
 </section>
 
@@ -585,16 +598,33 @@ function openSurprise() {
     const secret =
         document.getElementById("secret");
 
-    secret.style.display =
-        "block";
+    const readLetter =
+        document.getElementById("readLetter");
 
-    secret.scrollIntoView({
 
-        behavior: "smooth",
+    /* Show the One More Thing message */
 
-        block: "center"
+    secret.style.display = "block";
 
-    });
+
+    /* Show Read My Letter button */
+
+    readLetter.style.display = "inline-block";
+
+
+    /* Scroll to the message */
+
+    setTimeout(function() {
+
+        secret.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "center"
+
+        });
+
+    }, 100);
 
 }
 
