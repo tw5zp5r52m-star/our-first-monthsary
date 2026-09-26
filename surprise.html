@@ -1,93 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>A Little Surprise ❤️</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Georgia, "Times New Roman", serif;
       background: linear-gradient(135deg, #ffe4ec, #fff5f8);
       color: #5a3040;
       min-height: 100vh;
       overflow-x: hidden;
     }
 
-    nav {
-      background: rgba(255,255,255,0.92);
-      padding: 15px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
 
-    nav a {
-      text-decoration: none;
-      color: #b94d70;
-      margin: 0 10px;
-      font-weight: bold;
-    }
+    /* =====================================
+       MAIN PAGE
+       ===================================== */
 
     .container {
-      min-height: 80vh;
+      min-height: 85vh;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       text-align: center;
-      padding: 40px 20px;
-      transition: opacity 0.8s ease;
+
+      padding: 70px 20px;
     }
 
+
     h1 {
-      font-size: 45px;
-      margin-bottom: 10px;
+      font-size: clamp(38px, 8vw, 55px);
+      margin-bottom: 12px;
+      color: #bd3f65;
     }
+
 
     .subtitle {
       font-size: 18px;
       margin-bottom: 30px;
+      line-height: 1.6;
     }
+
+
+    /* =====================================
+       BUTTONS
+       ===================================== */
 
     button {
       border: none;
+
       background: #d85b83;
       color: white;
-      padding: 15px 28px;
+
+      padding: 15px 30px;
+
       border-radius: 30px;
+
       font-size: 17px;
+
       cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-      transition: transform 0.25s ease, background 0.25s ease;
+
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+      transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
     }
+
 
     button:hover {
       background: #b94469;
-      transform: translateY(-2px);
+
+      transform: translateY(-3px);
+
+      box-shadow: 0 12px 25px rgba(0,0,0,0.18);
     }
 
+
+    /* =====================================
+       SURPRISE MESSAGE
+       ===================================== */
+
     #message {
+
       display: none;
+
       max-width: 650px;
+
       margin-top: 35px;
-      background: white;
-      padding: 30px;
-      border-radius: 22px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+
+      background: rgba(255,255,255,0.95);
+
+      padding: 35px;
+
+      border-radius: 25px;
+
+      box-shadow:
+        0 10px 30px rgba(80,30,50,0.13);
+
       line-height: 1.8;
+
       font-size: 18px;
+
       animation: messageAppear 1s ease;
     }
 
+
+    #message h2 {
+      color: #bd3f65;
+
+      margin-bottom: 20px;
+
+      font-size: 30px;
+    }
+
+
+    #message p {
+      margin-bottom: 18px;
+    }
+
+
     @keyframes messageAppear {
+
       from {
         opacity: 0;
         transform: translateY(25px);
@@ -97,532 +150,1040 @@
         opacity: 1;
         transform: translateY(0);
       }
+
     }
 
-    .close-button {
+
+    /* =====================================
+       TURN THE PAGE BUTTON
+       ===================================== */
+
+    .finish-button {
+
       margin-top: 25px;
-      background: #7d4057;
+
+      background: #7f4058;
+
+      display: none;
+
+      animation: fadeUp 1s ease;
     }
 
-    .close-button:hover {
-      background: #612f43;
+
+    .finish-button:hover {
+      background: #622f44;
     }
+
+
+    @keyframes fadeUp {
+
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
+    /* =====================================
+       FOOTER
+       ===================================== */
 
     footer {
+
       text-align: center;
+
       padding: 30px;
+
       font-size: 14px;
-      transition: opacity 0.8s ease;
+
+      color: #9d536b;
     }
 
-    /* =========================================
-       BOOK CLOSING SCREEN
-       ========================================= */
+
+    /* =====================================
+       FINAL BOOK SCREEN
+       ===================================== */
 
     #bookEnding {
+
       position: fixed;
+
       inset: 0;
+
       background:
-        radial-gradient(circle at center, #fff5f8 0%, #ffdce7 45%, #efb5c8 100%);
+        radial-gradient(
+          circle at center,
+          #fff8fa 0%,
+          #ffe4ed 48%,
+          #efb8ca 100%
+        );
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
+
       flex-direction: column;
-      z-index: 999;
+
+      z-index: 9999;
+
       opacity: 0;
+
       visibility: hidden;
+
       pointer-events: none;
-      transition: opacity 0.8s ease;
+
+      transition:
+        opacity 1s ease,
+        visibility 1s ease;
+
       overflow: hidden;
     }
 
+
     #bookEnding.active {
+
       opacity: 1;
+
       visibility: visible;
+
       pointer-events: auto;
     }
 
+
+    /* =====================================
+       BOOK SCENE
+       ===================================== */
+
     .book-scene {
-      width: 360px;
-      height: 250px;
-      perspective: 1600px;
+
+      width: 430px;
+
+      height: 300px;
+
+      perspective: 1800px;
+
       position: relative;
-      margin-bottom: 40px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      margin-bottom: 15px;
     }
+
 
     .book {
-      width: 300px;
-      height: 210px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+
+      width: 360px;
+
+      height: 245px;
+
+      position: relative;
+
       transform-style: preserve-3d;
+
+      transform:
+        rotateX(4deg);
+
+      transition:
+        transform 1.2s ease;
     }
 
-    .book-cover {
-      position: absolute;
-      width: 150px;
-      height: 210px;
-      top: 0;
-      background: linear-gradient(135deg, #8f3f5c, #c96587);
-      border: 3px solid #6e2e45;
-      box-shadow: 0 15px 35px rgba(80, 35, 50, 0.3);
-      transform-style: preserve-3d;
-    }
 
-    .book-cover.left {
-      left: 0;
-      transform-origin: right center;
-      border-radius: 10px 2px 2px 10px;
-    }
-
-    .book-cover.right {
-      right: 0;
-      transform-origin: left center;
-      border-radius: 2px 10px 10px 2px;
-    }
+    /* =====================================
+       BOOK PAGES
+       ===================================== */
 
     .book-pages {
+
       position: absolute;
-      width: 292px;
-      height: 202px;
-      left: 4px;
-      top: 4px;
-      background: #fffafc;
-      border: 2px solid #e5b7c5;
-      box-shadow: inset 0 0 20px rgba(100, 40, 60, 0.08);
+
+      left: 5px;
+
+      top: 5px;
+
+      width: 350px;
+
+      height: 235px;
+
+      background: #fffdfd;
+
+      border: 2px solid #e3c1cc;
+
+      box-shadow:
+        0 10px 25px rgba(70,30,45,0.18);
+
+      display: flex;
+
+      overflow: hidden;
+
+      transform-style: preserve-3d;
     }
+
 
     .page {
-      position: absolute;
-      top: 5px;
-      width: 140px;
-      height: 192px;
-      background: #fffdfd;
-      border: 1px solid #e7c8d1;
-      box-shadow: 0 5px 15px rgba(80, 35, 50, 0.12);
-      transition: transform 1.8s cubic-bezier(0.65, 0, 0.35, 1);
-      transform-style: preserve-3d;
+
+      width: 50%;
+
+      height: 100%;
+
+      background:
+        linear-gradient(
+          90deg,
+          #fffdfd,
+          #fff7fa
+        );
+
+      border: 1px solid #ead0d8;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      align-items: center;
+
+      position: relative;
+
       backface-visibility: hidden;
+
+      transition:
+        transform 2.4s
+        cubic-bezier(0.65, 0, 0.35, 1);
+
+      transform-style: preserve-3d;
+
+      z-index: 5;
     }
+
 
     .page.left-page {
-      left: 7px;
+
       transform-origin: right center;
-      border-radius: 7px 2px 2px 7px;
+
+      border-radius: 8px 2px 2px 8px;
     }
+
 
     .page.right-page {
-      right: 7px;
+
       transform-origin: left center;
-      border-radius: 2px 7px 7px 2px;
+
+      border-radius: 2px 8px 8px 2px;
     }
 
-    .page span {
-      display: block;
-      text-align: center;
-      font-size: 45px;
-      margin-top: 55px;
+
+    .page-icon {
+
+      font-size: 50px;
+
+      margin-bottom: 12px;
     }
 
-    .page p {
-      text-align: center;
+
+    .page-title {
+
+      font-size: 18px;
+
+      color: #8f4a61;
+
+      font-weight: bold;
+    }
+
+
+    .page-small {
+
       font-size: 13px;
-      padding: 0 10px;
-      color: #8b5366;
+
+      color: #a56b7d;
+
+      margin-top: 6px;
     }
 
-    /* First pages fold inward */
-    #bookEnding.closing .page.left-page {
-      transform: rotateY(-175deg);
+
+    /* =====================================
+       PAGE TURN ANIMATION
+       ===================================== */
+
+    #bookEnding.closing .left-page {
+
+      transform:
+        rotateY(-165deg);
     }
 
-    #bookEnding.closing .page.right-page {
-      transform: rotateY(175deg);
+
+    #bookEnding.closing .right-page {
+
+      transform:
+        rotateY(165deg);
     }
 
-    /* Covers close after the pages */
-    #bookEnding.closing .book-cover.left {
-      animation: closeLeftCover 2.5s ease forwards;
-      animation-delay: 1.1s;
+
+    /* =====================================
+       BOOK COVERS
+       ===================================== */
+
+    .cover {
+
+      position: absolute;
+
+      top: 0;
+
+      width: 180px;
+
+      height: 245px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #8e3c58,
+          #bd5b7b,
+          #8b3955
+        );
+
+      border: 4px solid #713047;
+
+      box-shadow:
+        0 18px 40px rgba(70,30,45,0.3);
+
+      transform-style: preserve-3d;
+
+      z-index: 10;
+
+      transition:
+        transform 2.8s
+        cubic-bezier(0.65, 0, 0.35, 1);
     }
 
-    #bookEnding.closing .book-cover.right {
-      animation: closeRightCover 2.5s ease forwards;
-      animation-delay: 1.1s;
+
+    .cover.left {
+
+      left: 0;
+
+      transform-origin: right center;
+
+      border-radius:
+        12px 3px 3px 12px;
     }
 
-    @keyframes closeLeftCover {
-      0% {
-        transform: rotateY(0deg);
-      }
 
-      100% {
-        transform: rotateY(-170deg);
-      }
+    .cover.right {
+
+      right: 0;
+
+      transform-origin: left center;
+
+      border-radius:
+        3px 12px 12px 3px;
     }
 
-    @keyframes closeRightCover {
-      0% {
-        transform: rotateY(0deg);
-      }
 
-      100% {
-        transform: rotateY(170deg);
-      }
+    /* =====================================
+       COVER DECORATION
+       ===================================== */
+
+    .cover::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 12px;
+
+      border: 1px solid rgba(255,255,255,0.35);
+
+      border-radius: 8px;
     }
+
+
+    .cover::after {
+
+      content: "❤️";
+
+      position: absolute;
+
+      left: 50%;
+
+      top: 50%;
+
+      transform:
+        translate(-50%, -50%);
+
+      font-size: 28px;
+
+      opacity: 0.65;
+    }
+
+
+    /* =====================================
+       CLOSING COVERS
+       ===================================== */
+
+    #bookEnding.closing .cover.left {
+
+      transform:
+        rotateY(-178deg);
+
+      transition-delay:
+        1.1s;
+    }
+
+
+    #bookEnding.closing .cover.right {
+
+      transform:
+        rotateY(178deg);
+
+      transition-delay:
+        1.1s;
+    }
+
+
+    /* =====================================
+       BOOK TITLE
+       ===================================== */
 
     .book-title {
+
       position: absolute;
+
       left: 50%;
+
       top: 50%;
-      transform: translate(-50%, -50%) translateZ(20px);
-      width: 130px;
+
+      width: 270px;
+
+      transform:
+        translate(-50%, -50%)
+        translateZ(35px);
+
       text-align: center;
-      color: white;
-      font-weight: bold;
-      font-size: 17px;
-      line-height: 1.4;
-      z-index: 5;
+
+      color: #fff8fa;
+
+      z-index: 30;
+
       opacity: 0;
-      transition: opacity 1s ease;
+
+      transition:
+        opacity 1.5s ease;
+
+      pointer-events: none;
     }
+
+
+    .book-title .small-title {
+
+      font-size: 14px;
+
+      letter-spacing: 4px;
+
+      margin-bottom: 10px;
+
+      opacity: 0.9;
+    }
+
+
+    .book-title .main-title {
+
+      font-size: 31px;
+
+      font-weight: bold;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      text-shadow:
+        0 3px 8px rgba(50,20,30,0.35);
+    }
+
+
+    .book-title .heart-title {
+
+      font-size: 25px;
+
+      margin-top: 10px;
+    }
+
 
     #bookEnding.closed .book-title {
+
       opacity: 1;
+
+      transition-delay:
+        0.3s;
     }
+
+
+    /* =====================================
+       FINAL MESSAGE
+       ===================================== */
 
     .final-message {
+
       text-align: center;
+
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1s ease, transform 1s ease;
-      transition-delay: 0.4s;
+
+      transform:
+        translateY(25px);
+
+      transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+
+      transition-delay:
+        0.5s;
     }
+
 
     #bookEnding.closed .final-message {
+
       opacity: 1;
-      transform: translateY(0);
+
+      transform:
+        translateY(0);
     }
+
 
     .final-message h2 {
-      font-size: 36px;
-      margin: 0 0 10px;
+
       color: #8f3f5c;
+
+      font-size: 32px;
+
+      margin-bottom: 8px;
     }
+
 
     .final-message p {
-      font-size: 18px;
-      margin: 0 0 20px;
+
+      font-size: 17px;
+
+      margin-bottom: 20px;
+
+      color: #704153;
     }
 
-    .open-again {
-      background: #d85b83;
+
+    .beginning-button {
+
+      background: #bd3f65;
+
       display: none;
     }
 
-    #bookEnding.closed .open-again {
+
+    #bookEnding.closed
+    .beginning-button {
+
       display: inline-block;
+
+      animation:
+        fadeUp 1.2s ease;
     }
 
-    /* Floating hearts */
-    .heart {
+
+    /* =====================================
+       FLOATING HEARTS
+       ===================================== */
+
+    .floating-heart {
+
       position: fixed;
-      color: rgba(216, 91, 131, 0.25);
+
+      bottom: -40px;
+
       font-size: 25px;
-      animation: floatHeart 7s linear infinite;
+
+      opacity: 0;
+
       pointer-events: none;
+
       z-index: 1;
+
+      animation:
+        floatHeart 8s linear infinite;
     }
 
-    .heart:nth-child(1) {
-      left: 10%;
-      bottom: -30px;
+
+    .fh1 {
+      left: 12%;
       animation-delay: 0s;
     }
 
-    .heart:nth-child(2) {
-      left: 30%;
-      bottom: -30px;
+    .fh2 {
+      left: 32%;
       animation-delay: 2s;
     }
 
-    .heart:nth-child(3) {
-      left: 55%;
-      bottom: -30px;
+    .fh3 {
+      left: 57%;
       animation-delay: 4s;
     }
 
-    .heart:nth-child(4) {
-      left: 80%;
-      bottom: -30px;
+    .fh4 {
+      left: 82%;
       animation-delay: 1s;
     }
 
+
     @keyframes floatHeart {
+
       0% {
-        transform: translateY(0) rotate(0deg);
+        transform:
+          translateY(0)
+          rotate(0deg);
+
         opacity: 0;
       }
 
       20% {
-        opacity: 1;
+        opacity: 0.45;
       }
 
       100% {
-        transform: translateY(-100vh) rotate(25deg);
+        transform:
+          translateY(-110vh)
+          rotate(30deg);
+
         opacity: 0;
       }
+
     }
 
-    /* Mobile */
+
+    /* =====================================
+       MOBILE
+       ===================================== */
+
     @media (max-width: 600px) {
 
-      nav {
-        padding: 12px 8px;
-        line-height: 2;
+      .container {
+        padding:
+          50px 18px;
       }
 
-      nav a {
-        margin: 0 5px;
-        font-size: 13px;
-      }
-
-      h1 {
-        font-size: 34px;
-      }
-
-      .subtitle {
-        font-size: 16px;
-      }
 
       #message {
+
+        padding: 25px;
+
         font-size: 16px;
-        padding: 24px;
       }
+
+
+      #message h2 {
+
+        font-size: 25px;
+      }
+
 
       .book-scene {
-        transform: scale(0.8);
-        margin-top: -20px;
-        margin-bottom: 10px;
+
+        transform:
+          scale(0.72);
+
+        margin-top:
+          -25px;
+
+        margin-bottom:
+          -30px;
       }
+
 
       .final-message h2 {
-        font-size: 29px;
+
+        font-size: 27px;
       }
 
+
       .final-message p {
-        font-size: 16px;
-        padding: 0 25px;
+
+        font-size: 15px;
+
+        padding:
+          0 25px;
       }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- Floating hearts -->
-  <div class="heart">❤️</div>
-  <div class="heart">💕</div>
-  <div class="heart">❤️</div>
-  <div class="heart">💗</div>
 
-  <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="letter.html">💌 Letter</a>
-    <a href="photos.html">📸 Photos</a>
-    <a href="videos.html">🎥 Videos</a>
-    <a href="timeline.html">🗓️ Timeline</a>
-    <a href="surprise.html">🎁 Surprise</a>
-  </nav>
+<!-- =====================================
+     FLOATING HEARTS
+     ===================================== -->
 
-  <div class="container" id="mainContent">
+<div class="floating-heart fh1">❤️</div>
+<div class="floating-heart fh2">💕</div>
+<div class="floating-heart fh3">💗</div>
+<div class="floating-heart fh4">❤️</div>
 
-    <h1>One More Thing... 🎁</h1>
 
-    <p class="subtitle">
-      Kuenzang, there's something I wanted you to see. ❤️
+<!-- =====================================
+     MAIN SURPRISE
+     ===================================== -->
+
+<div class="container" id="mainContent">
+
+
+  <h1>
+    One More Thing... 🎁
+  </h1>
+
+
+  <p class="subtitle">
+    Kuenzang, there's something I wanted you to see. ❤️
+  </p>
+
+
+  <button onclick="showMessage()">
+
+    Open Your Surprise 💌
+
+  </button>
+
+
+  <div id="message">
+
+
+    <h2>
+      Happy First Monthsary, Thuslebi ❤️
+    </h2>
+
+
+    <p>
+      One month might just be the beginning, but it already holds so many
+      memories that mean a lot to me.
     </p>
 
-    <button onclick="showMessage()">
-      Open Your Surprise 💌
+
+    <p>
+      Thank you for all the laughs, conversations, dates, random moments,
+      and everything in between.
+    </p>
+
+
+    <p>
+      I hope when you look through this little website, you smile at some
+      of the memories we've made together.
+    </p>
+
+
+    <p>
+      Here's to our first month and to all the memories still waiting
+      for us. ❤️
+    </p>
+
+
+    <p>
+      <strong>
+        Happy Monthsary, Kuenzang. ❤️
+      </strong>
+    </p>
+
+
+    <p>
+      — Jamyang
+    </p>
+
+
+    <!-- FINAL BUTTON -->
+
+    <button
+      class="finish-button"
+      id="finishButton"
+      onclick="startClosingBook()">
+
+      📖 Turn the Page
+
     </button>
 
-    <div id="message">
-
-      <h2>Happy First Monthsary, Thuslebi ❤️</h2>
-
-      <p>
-        One month might just be the beginning, but it already holds so many
-        memories that mean a lot to me.
-      </p>
-
-      <p>
-        Thank you for all the laughs, conversations, dates, random moments,
-        and everything in between.
-      </p>
-
-      <p>
-        I hope when you look through this little website, you smile at some
-        of the memories we've made together.
-      </p>
-
-      <p>
-        Here's to our first month and to all the memories still waiting
-        for us. ❤️
-      </p>
-
-      <p>
-        <strong>Happy Monthsary, Kuenzang. ❤️</strong>
-      </p>
-
-      <p>
-        — Jamyang
-      </p>
-
-      <button class="close-button" onclick="closeOurStory()">
-        📕 Close Our Story
-      </button>
-
-    </div>
 
   </div>
 
-  <footer id="footer">
-    Made with love by Jamyang for Kuenzang ❤️
-  </footer>
+
+</div>
 
 
-  <!-- BOOK CLOSING ANIMATION -->
+<footer id="footer">
 
-  <div id="bookEnding">
+  Made with love by Jamyang for Kuenzang ❤️
 
-    <div class="book-scene">
+</footer>
 
-      <div class="book">
 
-        <div class="book-pages">
+<!-- =====================================
+     BOOK CLOSING SCREEN
+     ===================================== -->
 
-          <div class="page left-page">
-            <span>💌</span>
-            <p>Our Letter</p>
+<div id="bookEnding">
+
+
+  <div class="book-scene">
+
+
+    <div class="book">
+
+
+      <!-- PAGES -->
+
+      <div class="book-pages">
+
+
+        <div class="page left-page">
+
+          <div class="page-icon">
+            💌
           </div>
 
-          <div class="page right-page">
-            <span>📸</span>
-            <p>Our Memories</p>
+          <div class="page-title">
+            Our Letter
+          </div>
+
+          <div class="page-small">
+            Words from my heart
           </div>
 
         </div>
 
-        <div class="book-cover left"></div>
-        <div class="book-cover right"></div>
 
-        <div class="book-title">
-          Our First<br>
-          Monthsary ❤️
+        <div class="page right-page">
+
+          <div class="page-icon">
+            📸
+          </div>
+
+          <div class="page-title">
+            Our Memories
+          </div>
+
+          <div class="page-small">
+            Moments we keep
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- BOOK COVERS -->
+
+      <div class="cover left"></div>
+
+      <div class="cover right"></div>
+
+
+      <!-- TITLE ON CLOSED BOOK -->
+
+      <div class="book-title">
+
+        <div class="small-title">
+          OUR
+        </div>
+
+        <div class="main-title">
+          Journey
+        </div>
+
+        <div class="heart-title">
+          ❤️
         </div>
 
       </div>
 
-    </div>
-
-    <div class="final-message">
-
-      <h2>Our First Chapter ❤️</h2>
-
-      <p>
-        And this is only the beginning...
-      </p>
-
-      <button class="open-again" onclick="openAgain()">
-        💕 Open Our Story Again
-      </button>
 
     </div>
+
 
   </div>
 
 
-  <script>
+  <!-- =====================================
+       FINAL MESSAGE
+       ===================================== -->
 
-    function showMessage() {
-
-      const message = document.getElementById("message");
-
-      message.style.display = "block";
-
-      setTimeout(function() {
-        message.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
-      }, 100);
-
-    }
+  <div class="final-message">
 
 
-    function closeOurStory() {
-
-      const bookEnding = document.getElementById("bookEnding");
-      const mainContent = document.getElementById("mainContent");
-      const footer = document.getElementById("footer");
-
-      /* Fade the original page */
-      mainContent.style.opacity = "0";
-      footer.style.opacity = "0";
-
-      setTimeout(function() {
-
-        bookEnding.classList.add("active");
-
-        /*
-          Small pause before the pages
-          begin folding inward.
-        */
-
-        setTimeout(function() {
-          bookEnding.classList.add("closing");
-        }, 700);
-
-        /*
-          After the book has closed,
-          show the final message.
-        */
-
-        setTimeout(function() {
-          bookEnding.classList.add("closed");
-        }, 3500);
-
-      }, 700);
-
-    }
+    <h2>
+      Until the Next Chapter ❤️
+    </h2>
 
 
-    function openAgain() {
+    <p>
+      Our first chapter may be finished,
+      but our journey isn't.
+    </p>
 
-      const bookEnding = document.getElementById("bookEnding");
-      const mainContent = document.getElementById("mainContent");
-      const footer = document.getElementById("footer");
 
-      bookEnding.classList.remove("closed");
-      bookEnding.classList.remove("closing");
+    <button
+      class="beginning-button"
+      onclick="goToBeginning()">
 
-      setTimeout(function() {
+      🏠 Back to the Beginning
 
-        bookEnding.classList.remove("active");
+    </button>
 
-        mainContent.style.opacity = "1";
-        footer.style.opacity = "1";
 
-        document.getElementById("message").style.display = "none";
+  </div>
 
-      }, 900);
 
-    }
+</div>
 
-  </script>
+
+<!-- =====================================
+     JAVASCRIPT
+     ===================================== -->
+
+<script>
+
+
+/* =====================================
+   OPEN SURPRISE
+   ===================================== */
+
+function showMessage() {
+
+  const message =
+    document.getElementById("message");
+
+  const finishButton =
+    document.getElementById("finishButton");
+
+
+  message.style.display =
+    "block";
+
+
+  setTimeout(function() {
+
+    finishButton.style.display =
+      "inline-block";
+
+  }, 900);
+
+
+  setTimeout(function() {
+
+    message.scrollIntoView({
+
+      behavior: "smooth",
+
+      block: "center"
+
+    });
+
+  }, 100);
+
+}
+
+
+/* =====================================
+   START BOOK CLOSING
+   ===================================== */
+
+function startClosingBook() {
+
+  const bookEnding =
+    document.getElementById("bookEnding");
+
+  const mainContent =
+    document.getElementById("mainContent");
+
+  const footer =
+    document.getElementById("footer");
+
+
+  /* Fade the surprise page away */
+
+  mainContent.style.transition =
+    "opacity 1s ease, transform 1s ease";
+
+  mainContent.style.opacity =
+    "0";
+
+  mainContent.style.transform =
+    "translateY(-20px)";
+
+
+  footer.style.transition =
+    "opacity 1s ease";
+
+  footer.style.opacity =
+    "0";
+
+
+  /* Bring in the book */
+
+  setTimeout(function() {
+
+    bookEnding.classList.add("active");
+
+
+    /*
+      Give her a moment to see
+      the open book before it closes.
+    */
+
+    setTimeout(function() {
+
+      bookEnding.classList.add("closing");
+
+    }, 900);
+
+
+    /*
+      The book has now finished
+      closing.
+    */
+
+    setTimeout(function() {
+
+      bookEnding.classList.add("closed");
+
+    }, 3900);
+
+
+  }, 900);
+
+}
+
+
+/* =====================================
+   RETURN TO BEGINNING
+   ===================================== */
+
+function goToBeginning() {
+
+  window.location.href =
+    "index.html";
+
+}
+
+
+</script>
+
 
 </body>
+
 </html>
